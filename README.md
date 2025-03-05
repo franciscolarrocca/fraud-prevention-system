@@ -8,15 +8,20 @@ This project implements a **fraud prevention system** using a microservices arch
 Both services communicate via **REST API** and are fully containerized with **Docker**.  
 
 ## **How can I test it?**  
+### **1. Run with Docker Compose**
+```
+docker-compose up --build
+```
+This will start compliance-service (port 8080) and payment-service (port 8081).
 
-### **1. Report a Stolen Card**  
+### **2. Report a Stolen Card**  
 1. Open your browser and visit: **[`http://localhost:8080/report`](http://localhost:8080/report)**  
 2. Enter the following credentials:  
    - **Username:** `john_doe`  
    - **Secret Code:** `hashed_secret_123`  
 3. Submit the report.  
 
-### **2. Attempt a Payment (Blocked if Stolen)**  
+### **3. Attempt a Payment (Blocked if Stolen)**  
 Run the following **CURL** command to simulate a payment request:  
 
 ```bash
